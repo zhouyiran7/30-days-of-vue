@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- import CSS -->
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <el-card class="box-card">
+        <div slot="header" class="clearfix">
+          <span>{{ name }}</span>
+          <el-button style="float: right; padding: 3px 0" type="text"
+            >Copy</el-button
+          >
+        </div>
+        <div class="text item">
+          {{ company.name }}
+        </div>
+        <div class="text item">
+          {{ company.catchPhrase }}
+        </div>
+        <div class="text item">
+          {{ email }}
+        </div>
+      </el-card>
+    </div>
+  </body>
+  <!-- import Vue before Element -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./main.js"></script>
+</html>
+
+Resources
