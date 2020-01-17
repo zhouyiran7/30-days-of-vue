@@ -85,8 +85,25 @@
 				<div class="card-columns listfeaturedtag">
 
 					<!-- begin post -->
-					<medium-post-component v-for="post in mockPosts" v-bind:post="post" :key="post.id"
+					<medium-post-component v-for="post in mockPosts" v-bind:post="post" :key="post.id" inline-template
 						@add="addPostComponent($event)">
+						<div class="card">
+							<div class="row">
+								<div class="col-md-5 wrapthumbnail">
+									<a href="post.html">
+										<div class="thumbnail" v-bind:style="{ 'background-image': 'url(' + post.thumbnail_image + ')' }">
+										</div>
+									</a>
+								</div>
+								<div class="col-md-7">
+									<div class="card-block">
+										<h2 class="card-title"><a href="post.html">{{ post.title }}</a></h2>
+										<h4 class="card-text" @click="emitToAdd(post)">{{ post.content }}</h4>
+										<metafooter-component :post="post"></metafooter-component>
+									</div>
+								</div>
+							</div>
+						</div>
 					</medium-post-component>
 					<!-- end post -->
 				</div>
